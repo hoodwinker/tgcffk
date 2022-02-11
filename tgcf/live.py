@@ -115,7 +115,7 @@ async def start_sync() -> None:
 
     client = TelegramClient(config.SESSION, config.API_ID, config.API_HASH)
     await client.start(bot_token=config.BOT_TOKEN)
-    config.is_bot = await client.is_bot()
+    config.is_bot = False
     logging.info(f"config.is_bot={config.is_bot}")
     command_events = get_events()
 
